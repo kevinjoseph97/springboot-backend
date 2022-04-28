@@ -59,7 +59,7 @@ public class EmployeeController {
 				() -> new EmplNotFoundException("Could not find Employee"));
 		employee.setFirstName(emplInfo.getFirstName());
 		employee.setLastName(emplInfo.getLastName());
-		employee.setJoingDate(emplInfo.getJoingDate());
+		employee.setJoiningDate(emplInfo.getJoiningDate());
 		employee.setPhoneNumber(emplInfo.getPhoneNumber());
 		employee.setEmailAddress(emplInfo.getEmailAddress());
 		employee.setDesignation(emplInfo.getDesignation());

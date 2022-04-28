@@ -1,5 +1,6 @@
 package com.infy.springbootbackend.model;
 
+
 import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +11,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
-import org.springframework.lang.NonNull;
+
 
 @Entity
 @Table(name="employees")
@@ -32,7 +33,7 @@ public class Employee {
 
 	
 	@Column(name = "joining_date" )
-	private LocalDate joingDate;
+	private LocalDate joiningDate;
 	
 	@Column(name ="email_address" )
 	@NotNull(message = "Can not be empty")
@@ -57,12 +58,12 @@ public class Employee {
 		
 	}
 	
-	public Employee(String firstName, String lastName, LocalDate joingDate, String emailAddress, String phoneNumber,
+	public Employee(String firstName, String lastName, LocalDate joiningDate, String emailAddress, String phoneNumber,
 			String designation, String locationCity, String picture) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.joingDate = joingDate;
+		this.joiningDate = joiningDate;
 		this.emailAddress = emailAddress;
 		this.phoneNumber = phoneNumber;
 		this.designation = designation;
@@ -94,12 +95,12 @@ public class Employee {
 		this.lastName = lastName;
 	}
 
-	public LocalDate getJoingDate() {
-		return joingDate;
+	public LocalDate getJoiningDate() {
+		return joiningDate;
 	}
 
-	public void setJoingDate(LocalDate joingDate) {
-		this.joingDate = joingDate;
+	public void setJoiningDate(LocalDate joiningDate) {
+		this.joiningDate = joiningDate;
 	}
 
 	public String getEmailAddress() {
@@ -145,7 +146,7 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", joingDate=" + joingDate
+		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", joiningDate=" + joiningDate
 				+ ", emailAddress=" + emailAddress + ", phoneNumber=" + phoneNumber + ", designation=" + designation
 				+ ", locationCity=" + locationCity + ", picture=" + picture + "]";
 	}
