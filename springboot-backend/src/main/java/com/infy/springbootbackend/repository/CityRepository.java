@@ -7,6 +7,6 @@ import com.infy.springbootbackend.model.City;
 
 
 @Repository
-public interface CityRepository extends JpaRepository<City, Long>{
+public interface CityRepository extends JpaRepository<City, Integer>{
 
 }

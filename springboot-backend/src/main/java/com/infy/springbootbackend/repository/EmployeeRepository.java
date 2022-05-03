@@ -8,6 +8,6 @@ import com.infy.springbootbackend.model.Employee;
 
 //extend JPA as it gives 
 @Repository
-public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
 }
