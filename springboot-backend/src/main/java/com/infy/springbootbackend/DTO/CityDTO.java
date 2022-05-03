@@ -23,6 +23,5 @@ public class CityDTO {
 		this.city = city;
 	}	
 	
-	
 
 }
