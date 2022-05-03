@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.infy.springbootbackend.exception.EmplNotFoundException;
+import com.infy.springbootbackend.model.City;
 import com.infy.springbootbackend.model.Employee;
+import com.infy.springbootbackend.repository.CityRepository;
 import com.infy.springbootbackend.repository.EmployeeRepository;
 
 @RestController
@@ -26,6 +28,9 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeRepository employeeRepository;
 	
+	@Autowired
+//	private CityRepository cityRepository;
+	
 	
 	@GetMapping("/employees")
 	public List<Employee> getAllEmployees() {
@@ -33,9 +38,8 @@ public class EmployeeController {
 	}
 	
 
-	
 	@PostMapping("/employees")
-	public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee){
+	public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee  ){
 		Employee e = employeeRepository.save(employee);
 		return new ResponseEntity<Employee>(e, HttpStatus.CREATED);
 	}
@@ -63,8 +67,7 @@ public class EmployeeController {
 		employee.setPhoneNumber(emplInfo.getPhoneNumber());
 		employee.setEmailAddress(emplInfo.getEmailAddress());
 		employee.setDesignation(emplInfo.getDesignation());
-		employee.setLocationCity(emplInfo.getLocationCity());
-		
+		employee.setCity(emplInfo.getCity()); 
 		Employee updatedEmpl = employeeRepository.save(employee);
 		//return ResponseEntity.ok(updatedEmpl);
 		return new ResponseEntity<Employee>(updatedEmpl, HttpStatus.OK);
@@ -72,12 +75,6 @@ public class EmployeeController {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
+
 	
 }
