@@ -30,11 +30,11 @@ public class EmployeeDTO {
 	@Pattern(regexp = ("^[0-9]{10}$"))
 	private String phoneNumber;
 	
-	private Designation designation;
+	private DesignationDTO designationDTO;
 	
 	private String picture;
 	
-	private City city;
+	private CityDTO cityDTO;
 
 	public Integer getId() {
 		return id;
@@ -84,13 +84,6 @@ public class EmployeeDTO {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public Designation getDesignation() {
-		return designation;
-	}
-
-	public void setDesignation(Designation designation) {
-		this.designation = designation;
-	}
 
 	public String getPicture() {
 		return picture;
@@ -100,12 +93,21 @@ public class EmployeeDTO {
 		this.picture = picture;
 	}
 
-	public City getCity() {
-		return city;
+
+	public DesignationDTO getDesignationDTO() {
+		return designationDTO;
 	}
 
-	public void setCity(City city) {
-		this.city = city;
+	public void setDesignationDTO(DesignationDTO designationDTO) {
+		this.designationDTO = designationDTO;
+	}
+
+	public CityDTO getCityDTO() {
+		return cityDTO;
+	}
+
+	public void setCityDTO(CityDTO cityDTO) {
+		this.cityDTO = cityDTO;
 	}
 	
 	
