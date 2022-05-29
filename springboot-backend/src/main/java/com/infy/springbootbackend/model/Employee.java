@@ -2,6 +2,7 @@ package com.infy.springbootbackend.model;
 
 
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
@@ -22,7 +23,7 @@ import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name="employee")
-public class Employee {
+public class Employee implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

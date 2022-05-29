@@ -1,6 +1,8 @@
 package com.infy.springbootbackend.model;
 
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="designation")
-public class Designation {
+public class Designation implements Serializable {
 
 	
 	@Id
@@ -23,10 +25,8 @@ public class Designation {
 	
 	
 	public Designation() {
-		
 	}
 	
-
 	public Designation(String designation) {
 		super();
 		this.designation = designation;
@@ -40,6 +40,7 @@ public class Designation {
 		this.id = id;
 	}
 
+	
 	public String getDesignation() {
 		return designation;
 	}

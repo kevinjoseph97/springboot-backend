@@ -1,5 +1,6 @@
 package com.infy.springbootbackend.DTO;
 
+import com.infy.springbootbackend.model.City;
 
 public class CityDTO {
 	
@@ -21,7 +22,14 @@ public class CityDTO {
 
 	public void setCity(String city) {
 		this.city = city;
-	}	
+	}
 	
+	
+	public static CityDTO prepareDTO(City city) {
+		CityDTO cDTO = new CityDTO();
+		cDTO.setId(city.getId());
+		cDTO.setCity(city.getCity());
+		return cDTO;
+	}
 
 }

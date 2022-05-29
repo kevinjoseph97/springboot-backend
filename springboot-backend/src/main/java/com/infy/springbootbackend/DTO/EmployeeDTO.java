@@ -8,6 +8,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import com.infy.springbootbackend.model.City;
 import com.infy.springbootbackend.model.Designation;
+import com.infy.springbootbackend.model.Employee;
 
 public class EmployeeDTO {
 	
@@ -30,11 +31,11 @@ public class EmployeeDTO {
 	@Pattern(regexp = ("^[0-9]{10}$"))
 	private String phoneNumber;
 	
-	private DesignationDTO designationDTO;
+	private DesignationDTO designation;
 	
 	private String picture;
 	
-	private CityDTO cityDTO;
+	private CityDTO city;
 
 	public Integer getId() {
 		return id;
@@ -92,23 +93,64 @@ public class EmployeeDTO {
 	public void setPicture(String picture) {
 		this.picture = picture;
 	}
-
-
-	public DesignationDTO getDesignationDTO() {
-		return designationDTO;
+	
+	public DesignationDTO getDesignation() {
+		return designation;
 	}
 
-	public void setDesignationDTO(DesignationDTO designationDTO) {
-		this.designationDTO = designationDTO;
+	public void setDesignation(DesignationDTO designation) {
+		this.designation = designation;
+	}
+	
+	public CityDTO getCity() {
+		return city;
 	}
 
-	public CityDTO getCityDTO() {
-		return cityDTO;
+	public void setCity(CityDTO city) {
+		this.city = city;
 	}
 
-	public void setCityDTO(CityDTO cityDTO) {
-		this.cityDTO = cityDTO;
+	
+	
+	public static EmployeeDTO prepareDTO(Employee employee) {
+		EmployeeDTO employeeDTO = new EmployeeDTO();
+		employeeDTO.setId(employee.getId());
+		employeeDTO.setFirstName(employee.getFirstName());
+		employeeDTO.setLastName(employee.getLastName());
+		employeeDTO.setJoiningDate(employee.getJoiningDate());
+		employeeDTO.setEmailAddress(employee.getEmailAddress());
+		employeeDTO.setPhoneNumber(employee.getPhoneNumber());
+		employeeDTO.setPicture(employee.getPicture());
+		return employeeDTO;
+		}
+	
+	
+	public static Employee prepareEntity(EmployeeDTO eDTO) {
+		Employee e = new Employee();
+		e.setId(eDTO.getId());
+		e.setFirstName(eDTO.getFirstName());
+		e.setLastName(eDTO.getLastName());
+		e.setJoiningDate(eDTO.getJoiningDate());
+		e.setEmailAddress(eDTO.getEmailAddress());
+		e.setPhoneNumber(eDTO.getPhoneNumber());
+		e.setPicture(eDTO.getPicture());
+		return e;
 	}
+
+	@Override
+	public String toString() {
+		return "EmployeeDTO [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", joiningDate="
+				+ joiningDate + ", emailAddress=" + emailAddress + ", phoneNumber=" + phoneNumber + ", designation="
+				+ designation + ", picture=" + picture + ", city=" + city + "]";
+	}
+
+
+	
+	
+	
+	
+	
+	
 	
 	
 	

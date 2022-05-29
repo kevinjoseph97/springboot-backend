@@ -1,5 +1,6 @@
 package com.infy.springbootbackend.DTO;
 
+import com.infy.springbootbackend.model.Designation;
 
 public class DesignationDTO {
 
@@ -26,6 +27,18 @@ public class DesignationDTO {
 	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
+	
+	
+	public static DesignationDTO prepareDTO(Designation designation) {
+		DesignationDTO dDTO= new DesignationDTO();
+		dDTO.setId(designation.getId());
+		dDTO.setDesignation(designation.getDesignation());
+		return dDTO;
+		
+	}
+	
+	
+	
 
 
 	
